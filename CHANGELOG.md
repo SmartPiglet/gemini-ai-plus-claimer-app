@@ -5,6 +5,11 @@ All notable changes to the **Google AI Plus Portal** landing page and distributi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+- Added a Linux launcher that runs the v1.0.1 Windows release through Wine.
+- Documented Linux prerequisites and the current limitation that the release is not a native Linux build.
+
 ---
 
 ## [1.0.1] - 2026-10-31

@@ -1,7 +1,7 @@
 # Google AI Plus Portal — Official Web Hub & Distribution
 
 [![Live Deployment: Vercel](https://img.shields.io/badge/deployment-Vercel-000000?style=flat-square&logo=vercel)](https://gemini-ai-plus-claimer.vercel.app/)
-[![Platform: Windows 10 / 11](<https://img.shields.io/badge/platform-Windows%2010%20%2F%2011%20(64--bit)-0284c7?style=flat-square&logo=windows>)](https://github.com/nmrisrl11/gemini-ai-plus-claimer-app/releases)
+[![Platform: Windows 10 / 11](<https://img.shields.io/badge/platform-Windows%2010%20%2F%2011%20(64--bit)-0284c7?style=flat-square&logo=windows>)](https://github.com/nmrisrl11/gemini-ai-plus-claimer-app/releases) [![Linux](https://img.shields.io/badge/Linux-Wine%20launcher-77216F?style=flat-square&logo=linux)](#linux)
 [![Version: v1.0.1](https://img.shields.io/badge/release-v1.0.1-38bdf8?style=flat-square&logo=github)](https://github.com/nmrisrl11/gemini-ai-plus-claimer-app/releases/tag/v1.0.1)
 [![WCAG 2.1 AA Compliant](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-10b981?style=flat-square)](https://www.w3.org/WAI/WCAG21/quickref/)
 [![Telemetry: Zero](<https://img.shields.io/badge/telemetry-Zero%20(100%25%20Local)-10b981?style=flat-square>)](#-privacy--local-execution)
@@ -34,6 +34,8 @@ gemini-ai-plus-claimer-app/
 │   └── style.css       # Custom scrollbars, focus rings & prefers-reduced-motion
 ├── js/
 │   └── app.js          # Direct download routing, mobile drawer, a11y live announcer
+├── linux/
+│   └── run-portal.sh   # Linux launcher for the Windows binary via Wine
 └── images/
     ├── app_icon.ico    # Multi-resolution Windows application icon
     ├── app_icon.png    # High-resolution brand icon (512x512)
@@ -120,6 +122,24 @@ Get-FileHash "Google AI Plus Portal v1.0.1.exe" -Algorithm SHA256
 ```
 
 ---
+
+## 🐧 Linux
+
+The v1.0.1 release contains a Windows executable, not a native Linux build. Linux users
+can run that official binary through [Wine](https://www.winehq.org/) after verifying the
+published SHA-256 checksum:
+
+```bash
+# Debian/Ubuntu example
+sudo apt install wine
+
+# Extract the release archive, then launch the executable
+./linux/run-portal.sh "/path/to/Google AI Plus Portal v1.0.1.exe"
+```
+
+The launcher fails clearly when Wine or the executable is missing. A native Linux binary
+requires the private automation source repository referenced in `AGENT.md`; this public
+distribution repository does not contain that source.
 
 ## 🛠️ Local Development & Code Quality
 
