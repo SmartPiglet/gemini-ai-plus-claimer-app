@@ -11,7 +11,7 @@
 - **Type**: High-conversion, accessible, zero-telemetry landing page & distribution hub
 - **Production URL**: [https://gemini-ai-plus-claimer.vercel.app](https://gemini-ai-plus-claimer.vercel.app/)
 - **Distribution Repository (Public)**: [https://github.com/nmrisrl11/gemini-ai-plus-claimer-app](https://github.com/nmrisrl11/gemini-ai-plus-claimer-app)
-- **Underlying Desktop Software**: A standalone, native Windows 10/11 (64-bit) portable executable that automates promotional student onboarding and captures canonical official Google One offer links for 12 months of complimentary Gemini Advanced and 2TB cloud storage.
+- **Underlying Desktop Software**: A standalone, native Windows 10/11 (64-bit) portable executable. Linux users can launch that binary through Wine using `linux/run-portal.sh`; this repository does not contain the private automation source needed for a native Linux build.
 - **CRITICAL REPOSITORY BOUNDARY**:
   - `gemini-ai-plus-claimer-app` is the **PUBLIC** static landing page and compiled release distribution repository.
   - The actual Python automation source code is located in a **SEPARATE PRIVATE REPOSITORY** (`gemini-ai-plus-claimer`).
@@ -56,6 +56,9 @@ gemini-ai-plus-claimer-app/
 │   └── style.css       # Custom scrollbars, focus rings, reduced-motion overrides
 ├── js/
 │   └── app.js          # Client-side configuration, download routing, a11y announcer
+├── linux/
+│   ├── run-portal.sh             # Linux launcher for the Windows binary via Wine
+│   └── run-portal-ssh-termux.sh  # SSH/headless launcher with Android Chrome handoff
 └── images/
     ├── app_icon.ico    # Multi-resolution Windows desktop icon (16x16 to 256x256)
     ├── app_icon.png    # High-resolution (512x512) master logo asset
