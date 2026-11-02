@@ -35,7 +35,8 @@ gemini-ai-plus-claimer-app/
 ├── js/
 │   └── app.js          # Direct download routing, mobile drawer, a11y live announcer
 ├── linux/
-│   └── run-portal.sh   # Linux launcher for the Windows binary via Wine
+│   ├── run-portal.sh             # Linux launcher for the Windows binary via Wine
+│   └── run-portal-ssh-termux.sh  # SSH/headless launcher with Android Chrome handoff
 └── images/
     ├── app_icon.ico    # Multi-resolution Windows application icon
     ├── app_icon.png    # High-resolution brand icon (512x512)
@@ -140,6 +141,29 @@ sudo apt install wine
 The launcher fails clearly when Wine or the executable is missing. A native Linux binary
 requires the private automation source repository referenced in `AGENT.md`; this public
 distribution repository does not contain that source.
+
+### Raspberry Pi over SSH from Termux
+
+For a Linux-native/headless build installed on a Raspberry Pi, run the helper from
+Termux. It forwards the remote command over SSH, extracts the first HTTPS link printed
+by the command, and opens it in Chrome on Android:
+
+```bash
+pkg install openssh
+chmod +x linux/run-portal-ssh-termux.sh
+./linux/run-portal-ssh-termux.sh pi@raspberrypi.local
+```
+
+The default remote command is `google-ai-plus-portal --headless`. To use another
+Linux-native implementation, pass its command after the SSH target:
+
+```bash
+./linux/run-portal-ssh-termux.sh pi@raspberrypi.local \
+  /opt/google-ai-plus-portal/bin/portal --headless
+```
+
+The remote command must print the generated HTTPS link to stdout. The helper first
+tries Chrome's Android package and falls back to `termux-open-url`.
 
 ## 🛠️ Local Development & Code Quality
 

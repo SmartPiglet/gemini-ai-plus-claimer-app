@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Added a Linux launcher that runs the v1.0.1 Windows release through Wine.
+- Added a Termux SSH helper for headless Raspberry Pi execution with Android Chrome link handoff.
 - Documented Linux prerequisites and the current limitation that the release is not a native Linux build.
 
 ---

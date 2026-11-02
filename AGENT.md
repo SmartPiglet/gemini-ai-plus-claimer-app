@@ -57,7 +57,8 @@ gemini-ai-plus-claimer-app/
 ├── js/
 │   └── app.js          # Client-side configuration, download routing, a11y announcer
 ├── linux/
-│   └── run-portal.sh   # Linux launcher for the Windows binary via Wine
+│   ├── run-portal.sh             # Linux launcher for the Windows binary via Wine
+│   └── run-portal-ssh-termux.sh  # SSH/headless launcher with Android Chrome handoff
 └── images/
     ├── app_icon.ico    # Multi-resolution Windows desktop icon (16x16 to 256x256)
     ├── app_icon.png    # High-resolution (512x512) master logo asset
